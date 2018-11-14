@@ -1,0 +1,36 @@
+﻿<h1>
+    Book List
+    <button class="btn btn-success btn-circle pull-right"
+            (click)='add()'
+            title="Add Book">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+</h1>
+<br />
+<hr />
+<table class="table table-striped" *ngIf="books && books.length">
+    <thead>
+        <tr>
+            <th class="success">Title</th>
+            <th class="success">Year of Issue</th>
+            <th class="success">Number of Pages</th>
+            <th class="success">Publisher</th>
+            <th class="success"></th>
+            <th class="success"></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let b of books">
+        <tr>
+            <td>{{b.Title}}</td>
+            <td>{{b.YearOfIssue | date : 'yyyy'}}</td>
+            <td>{{b.NumberOfPages}}</td>
+            <td>{{b.Publisher1.Name}}</td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="edit(b.BookID)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="deleteBook(b)">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,40 @@
+﻿<h1>
+    Lending List
+    <button class="btn btn-success btn-circle pull-right"
+            (click)='add()'
+            title="Add Lending">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+</h1>
+
+<br />
+<table class="table table-striped" *ngIf="lendings && lendings.length">
+    <thead>
+        <tr>
+            <th class="success">Book</th>
+            <th class="success">Client</th>
+            <th class="success">Date of Lending</th>
+            <th class="success">Date of Return</th>
+            <th class="success"></th>
+            <th class="success"></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let len of lendings">
+        <tr>
+            <td>{{len.Book1.Title}}</td>
+            <td>{{len.Client1.Name}}</td>
+            <td>{{len.DateOfLending | date}}</td>
+            <td>{{len.DateOfReturn | date}}</td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="edit(len.LendingID)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="deleteLending(len)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<hr>
+<router-outlet></router-outlet>

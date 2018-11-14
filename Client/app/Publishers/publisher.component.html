@@ -1,0 +1,35 @@
+﻿<h1>
+    Publisher List
+    <button class="btn btn-success btn-circle pull-right"
+            (click)='add()'
+            title="Add Publisher">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+</h1>
+
+<br />
+
+<table class="table table-striped" *ngIf="publishers && publishers.length">
+    <thead>
+        <tr>
+            <th class="success">Name</th>
+            <th class="success">Country</th>
+            <th class="success"></th>
+            <th class="success"></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let pub of publishers">
+        <tr>
+            <td>{{pub.Name}}</td>
+            <td>{{pub.Country}}</td>
+
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="edit(pub.PublisherID)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="deletePublisher(pub)">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<router-outlet></router-outlet>

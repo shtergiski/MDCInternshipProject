@@ -1,0 +1,37 @@
+﻿<h1>
+    Library List
+    <button class="btn btn-success btn-circle pull-right"
+            (click)='add()'
+            title="Add Library">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+</h1>
+
+<br />
+
+<table class="table table-striped" *ngIf="libraries && libraries.length">
+    <thead>
+        <tr>
+            <th class="success">Name</th>
+            <th class="success">City</th>
+            <th class="success">Address</th>
+            <th class="success"></th>
+            <th class="success"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lib of libraries">
+            <td>{{lib.Name}}</td>
+            <td>{{lib.City}}</td>
+            <td>{{lib.Address}}</td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="edit(lib.LibraryID)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="deleteLibrary(lib)">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>

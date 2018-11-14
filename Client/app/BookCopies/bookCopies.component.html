@@ -1,0 +1,35 @@
+﻿<h1>
+    Book Copies List
+    <button class="btn btn-success btn-circle pull-right"
+            (click)='add()'
+            title="Add BookCopies">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+</h1>
+<br />
+
+<table class="table table-striped" *ngIf="bookCopies && bookCopies.length">
+    <thead>
+        <tr>
+            <th class="success">Book</th>
+            <th class="success">Library</th>
+            <th class="success">Number Of Copies</th>
+            <th class="success"></th>
+            <th class="success"></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let bCopy of bookCopies">
+        <tr>
+            <td>{{bCopy.Book1.Title}}</td>
+            <td>{{bCopy.Library1.Name}}</td>
+            <td>{{bCopy.NumberOfCopies}}</td>
+           
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="edit(bCopy.BookCopiesID)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="deleteBookCopy(bCopy)">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

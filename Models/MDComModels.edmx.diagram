@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7700a6d1e5b1490c83203cf1cd3fc8b3" Name="Diagram1">
+        <EntityTypeShape EntityType="MDComSampleModel.Book" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDComSampleModel.BookCopy" Width="1.5" PointX="5.25" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDComSampleModel.Client" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDComSampleModel.Lending" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDComSampleModel.Library" Width="1.5" PointX="3" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDComSampleModel.Publisher" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="MDComSampleModel.sysdiagram" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="MDComSampleModel.FK_Book_Publishers" ManuallyRouted="false" />
+        <AssociationConnector Association="MDComSampleModel.FK_BookCopies_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="MDComSampleModel.FK_Lending_Book" ManuallyRouted="false" />
+        <AssociationConnector Association="MDComSampleModel.FK_BookCopies_Library" ManuallyRouted="false" />
+        <AssociationConnector Association="MDComSampleModel.FK_Lending_Client" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

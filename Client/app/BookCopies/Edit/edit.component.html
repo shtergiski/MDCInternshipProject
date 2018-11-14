@@ -1,0 +1,40 @@
+﻿<form [formGroup]="bookCpsForm" (ngSubmit)="save()" novalidate>
+
+    <div class="form-group row">
+        <label for="" class="col-md-12">Number of Copies</label>
+        <div class="col-md-4">
+            <input type="text" class="form-control"
+                   formControlName="NumberOfCopies">
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+
+    <div class="form-group row">
+        <label for="book">Book: </label>
+            <select formControlName="Book" name="bookObj" id="book" placeholder="Book">
+                <option value="" disabled selected>Select a book</option>
+                <option *ngFor="let b of books" [ngValue]="b.BookID">{{b.Title}}</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label for="library">Library: </label>
+                <select formControlName="Library" name="libraryObj" id="library" placeholder="Library">
+                    <option value="" disabled selected>Select a library</option>
+                    <option *ngFor="let lib of libraries" [ngValue]="lib.LibraryID">{{lib.Name}}</option>
+                </select>
+            </div>
+
+        <div class="form-group row">
+            <div class="col-md-12">
+                <input type="submit"
+                       class="btn btn-primary"
+                       value="Save" />
+                <input type="button"
+                       class="btn btn-warning"
+                       value="Cancel"
+                       (click)="cancel()">
+            </div>
+
+        </div>
+</form>

@@ -1,0 +1,36 @@
+﻿<h1>
+    Client List
+    <button class="btn btn-success btn-circle pull-right"
+            (click)='add()'
+            title="Add Client">
+        <i class="glyphicon glyphicon-plus"></i>
+    </button>
+</h1>
+<br />
+
+<table class="table table-striped" *ngIf="clients && clients.length">
+    <thead>
+        <tr>
+            <th class="success">Name</th>
+            <th class="success">Phone</th>
+            <th class="success">City</th>
+            <th class="success">Address</th>
+            <th class="success"></th>
+            <th class="success"></th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let cli of clients">
+        <tr>
+            <td>{{cli.Name}}</td>
+            <td>{{cli.Phone}}</td>
+            <td>{{cli.City}}</td>
+            <td>{{cli.Address}}</td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="edit(cli.ClientID)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-xs btn-primary" (click)="deleteClient(cli)">Remove</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
